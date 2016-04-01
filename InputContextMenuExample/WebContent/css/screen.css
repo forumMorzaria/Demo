@@ -89,6 +89,15 @@ font-style:italic;
 .fontsize14{
 	font-size: 14px;
 }
+.fontsize16{
+	font-size: 16px;
+}
+.fontsize18{
+	font-size: 18px;
+}
+.fontsize20{
+	font-size: 20px;
+}
 
 body {
     margin: 0;
