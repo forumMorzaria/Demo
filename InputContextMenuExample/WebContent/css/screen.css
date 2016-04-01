@@ -1,0 +1,242 @@
+@charset "utf-8";
+
+.bold {
+ font-weight:bold;
+}
+.italic {
+font-style:italic;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.bgcyan {
+	background-color: cyan;
+}
+.bggrey {
+	background-color: grey;
+}
+.bgred {
+	background-color: red;
+}
+.bglightblue {
+	background-color: lightblue;
+}
+.bglightgreen {
+	background-color: lightgreen;
+}
+.bglightcoral {
+	background-color: lightcoral;
+}
+.bglightpink {
+	background-color: lightpink;
+}
+.bgsilver {
+	background-color: silver;
+}
+.bgwhite {
+	background-color: white;
+}
+.bggreen{
+	background-color: green;
+}
+.bgyellow {
+	background-color: yellow;
+}
+.bgnone{
+	background-color: inherit; 
+}
+
+.fontfamilyarial{
+	font-family: "Arial";
+}
+.fontfamilycalibri{
+	font-family: "Calibri";
+}
+.fontfamilycourier{
+	font-family: "Courier";
+}
+.fontfamilygeorgia{
+	font-family: "Georgia";
+}
+.fontfamilytrebuchetms{
+	font-family: "Trebuchet MS";
+}
+.fontfamilyverdana{
+	font-family: "Verdana";
+}
+.fontfamilytimesnewroman{
+	font-family: "Times New Roman";
+}
+.border{
+	border-style: solid;
+	border: 2px 2px 2px 2px;
+	border-color: black;
+}
+
+.fontsize6{
+	font-size: 6px;
+}
+.fontsize8{
+	font-size: 8px;
+}
+.fontsize10{
+	font-size: 10px;
+}
+.fontsize12{
+	font-size: 12px;
+}
+.fontsize14{
+	font-size: 14px;
+}
+
+body {
+    margin: 0;
+    background-color: #D0D0D0;
+    font-family: "Helvetica,Arial,FreeSans";
+    color: #000000;
+}
+
+img { border:0; }
+
+#container {
+    margin: 0 auto;
+    width: 700px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-left: 1px solid #999999;
+    border-right: 1px solid #999999;
+}
+
+h1 { 
+    font-size: 3.2em; 
+    color: navy; 
+    margin-bottom: 3px; 
+}
+
+h1 > .small { 
+    font-size: 0.4em;
+}
+
+h1 a { 
+    text-decoration: none 
+}
+
+h2 { 
+    font-size: 1.5em; 
+    color: navy;
+    border-bottom: 1px dotted navy;
+}
+
+h3 { 
+    text-align: center; 
+    color: navy; 
+}
+
+a { 
+    color: navy; 
+}
+
+.description { 
+    font-size: 1.2em; 
+    margin-bottom: 30px; 
+    margin-top: 30px; 
+    font-style: italic;
+}
+
+pre { 
+    background: #000; 
+    color: #fff; 
+    padding: 15px;
+}
+
+hr { 
+    border: 0; 
+    width: 80%; 
+    border-bottom: 1px solid #aaa;
+}
+
+ul.plain-list {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+ul.plain-list > li {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+
+#container .footer { text-align:center; padding-top:30px; font-style: italic; }
+
+.menu { font-size: 0; }
+.menu > li {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 15px;
+}
+.menu > li + li {
+    margin-left: 5px;
+}
+.menu > li > a {
+    color: white;
+    font-weight: bold;
+    background-color: #666;
+    text-decoration: none;
+    display: block;
+    padding: 2px 4px 2px 4px;
+}
+
+.menu > li.active > a {
+    background-color: #2C879B;
+}
+
+.menu > li > a:hover {
+    background-color: #111;
+}
+
+/* hide whitespace between inline-block elements */
+.inline-spaces { font-size: 0; }
+.inline-spaces > * { font-size: 11px; }
+
+/* demo trigger boxes */
+.box {
+    width: 100px; 
+    height: 50px; 
+    display:inline-block;
+    vertical-align: bottom;
+    padding: 5px;
+    color: grey;
+    font-weight: bold;
+    margin-left: 2px;
+    margin-top: 2px;
+    border: 2px;
+	border-color: orange;
+}
+.box > * {
+    display:block;
+}
+.menu-1 { 
+	width: 240px; 
+    height: 50px;
+	box-shadow: 1px 1px 1px 1px lightgray inset;
+	overflow: auto; 
+}
+
+.block-with-text{
+  height: 4.5em;
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 0.5em 1em;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  overflow: hidden;
+  float: left;
+}
+.menu-2 { background-color: blue; }
+.menu-injected { background-color: #666; }
+.menu-2.context-menu-disabled { background-color: red; }
+
