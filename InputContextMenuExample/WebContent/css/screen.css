@@ -221,7 +221,8 @@ ul.plain-list > li {
 .menu-1 { 
 	width: 240px; 
     height: 50px;
-	box-shadow: 1px 1px 1px 1px lightgray inset;
+	box-shadow: 1px 1px 1px 1px lightgray ;
+	padding: 2px 2px 2px 2px;
 	overflow: auto; 
 }
 
@@ -235,6 +236,11 @@ ul.plain-list > li {
   font-size: 14px;
   overflow: hidden;
   float: left;
+}
+
+.demotextbox{
+	width: 150px;
+	height: 20px;
 }
 .menu-2 { background-color: blue; }
 .menu-injected { background-color: #666; }

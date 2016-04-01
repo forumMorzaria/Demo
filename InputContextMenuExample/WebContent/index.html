@@ -115,7 +115,7 @@
             $.contextMenu({
                 selector: '.context-menu-input1', 
                 items: {
-                	bold: {name: "Bold", type:"checkbox",value:"bold",events:{click: text_click}},
+                	bold: {name: "Bold", type:"checkbox",value:"bold",events:{click: text_click},selected:true},
                     italic: {name: "Italic", type:"checkbox",value:"italic",events:{click: text_click}},
                     underline: {name: "Underline", type:"checkbox",value:"underline",events:{click: text_click}},
                     sep1: "---------",
@@ -133,7 +133,7 @@
                             verdana: {icon:"verdanafont", value:"Verdana", callback:changefont_click},
                         },
                     },
-                    fontsize: {name: "Font Size", type:'select', options: {1: '6', 2: '8', 3: '10', 4: '12', 5: '14', 6: '16'},selected: "2", events:{click: changefontsize_click}},
+                    fontsize: {name: "Font Size", type:'select', options: {1: '6', 2: '8', 3: '10', 4: '12', 5: '14', 6: '16'},selected: 2, events:{click: changefontsize_click}},
                     sep3: "---------",
                     foldcolors: {
                         name: "Background colors   ",
@@ -154,7 +154,8 @@
                 }, 
                 events: {
                     show: function(opt) {
-                        var $this = this;             
+                    	
+                        var $this = this;
                         // import states from data store
                         $.contextMenu.setInputValues(opt, $this.data());
                     }, 
@@ -166,12 +167,16 @@
                 }
             });
         });
+        
+        window.onload = function() {
+            document.getElementById("textarea").focus();
+        };
     </script>
     
-        <div id='textarea' contenteditable="true" class="context-menu-input1 menu-1 "></div>
+        <div id='textarea' contenteditable="true" class="context-menu-input1 menu-1 " ></div>
         <h2 id="inputs">Demo: Text Box</h2>
         <div id='text2'>
-        	<input type="text" name="textbox1" id="textbox1" class="context-menu-input1"></input>
+        	<input type="text" name="textbox1" id="textbox1" class="context-menu-input1 demotextbox"></input>
         </div>
     
 </div>
