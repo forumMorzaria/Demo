@@ -1,0 +1,350 @@
+
+#grid-snap {
+  width: 0%;
+  background-color: #29e;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 0px;
+  padding: 0%;
+  margin: 0%;
+}
+
+#drag-1{
+  top : 15%;
+  left : 14%;
+}
+
+#drag-2{
+  top : 15%;
+  left : 49%;
+  height : 8%;
+}
+
+#drag-3{
+  top : 20%;
+  left : 24%;
+}
+
+#drag-4{
+  top : 25%;
+  left : 24%;
+}
+
+#drag-5{
+  top : 30%;
+  left : 24%;
+}
+
+#drag-6{
+  top : 30%;
+  left : 70%;
+}
+
+#drag-7{
+  top : 37%;
+  left : 24%;
+}
+
+#drag-8{
+  top : 43%;
+  left : 24%;
+}
+
+#drag-9{
+  top : 50%;
+  left : 24%;
+}
+
+#drag-10{
+  top : 57%;
+  left : 24%;
+}
+
+#drag-11{
+  top : 63%;
+  left : 24%;
+}
+
+#drag-12{
+  top : 140%;
+  left : 24%;
+}
+
+
+
+#drag-label-1{
+  top : 15%;
+  left : 1%;
+}
+
+#drag-label-2{
+  top : 15%;
+  left : 34%;
+}
+
+#drag-label-3{
+  top : 20%;
+  left : 4%;
+}
+
+#drag-label-4{
+  top : 25%;
+  left : 4%;
+}
+
+#drag-label-5{
+  top : 30%;
+  left : 4%;
+}
+
+#drag-label-6{
+  top : 30%;
+  left : 50%;
+}
+
+#drag-label-7{
+  top : 37%;
+  left : 4%;
+}
+
+#drag-label-8{
+  top : 43%;
+  left : 4%;
+}
+
+#drag-label-9{
+  top : 50%;
+  left : 4%;
+}
+
+#drag-label-10{
+  top : 57%;
+  left : 4%;
+}
+
+#drag-label-11{
+  top : 63%;
+  left : 4%;
+}
+
+#drag-label-12{
+  top : 70%;
+  left : 4%;
+}
+
+
+.drag-element {
+  width: 17%;
+  height: 10%;
+  min-height: 1em;
+  margin: 0%;
+  border-style: solid;
+  border-color: #00000f;
+  background-color: grey;
+  color: black;	
+  border-radius: 0em;
+  padding: 0%;
+  position:absolute;	
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  overflow: hidden;
+}
+
+
+.drag-space {
+  width: 12%;
+  height: 1%;
+  top : 80%;
+  left : 4%;
+  min-height: 1em;
+  margin: 0.25%;
+  border-style: solid;
+  border-color: #00000f;
+  background-color: white;
+  border-color:blue;
+  position:absolute;
+  border-radius: 0em;
+  padding: 0.1%;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.drag-label {
+  width: 12%;
+  height: 3%;
+/*   top : 80%; */
+/*   left : 4%; */
+  min-height: 1em;
+  margin: 0%;
+  border-style: solid;
+  border-color: #00000f;
+  background-color: white;
+  /*border-color:blue;*/
+  position:absolute;
+  border-radius: 0em;
+  padding: 0%;
+  max-height:3%;
+  min-height:3%
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+.drag-newimage {
+  width: 13%;
+  height: 15%;
+  top : 80%;
+  left : 4%;
+  min-height: 1em;
+  margin: 0%;
+  border-style: solid;
+  border-color: #00f00f;
+  background-color: white;
+  border-color:blue;
+  position:absolute;
+  border-radius: 0em;
+  padding: 0%;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+.drag-newspacer {
+  height: 8%;
+  top : 80%;
+  min-height: 1em;
+  margin: 0.25%;
+  border-style: solid;
+  border-color: #d0f00f;
+  background-color: white;
+  border-color:blue;
+  position:absolute;
+  border-radius: 0em;
+  padding: 0.1%;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+
+.drag-newlabel {
+  width: 13%;
+  height: 8%;
+  top : 80%;
+  left : 4%;
+  min-height: 1em;
+  margin: 0%;
+  border-style: solid;
+  border-color: #00f00f;
+  background-color: white;
+  border-color:blue;
+  position:absolute;
+  border-radius: 0em;
+  padding: 0%;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+#drag-me::before {
+  content: "#" attr(id);
+  font-weight: bold;
+}
+
+.resize-drag {
+  background-color: #29e;
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+  border-radius: 0x;
+  padding: 0px;
+  margin: 0px 0px;
+
+  width: 0px;
+
+  /* This makes things *much* easier */
+  box-sizing: border-box;
+}
+
+.resize-container {
+  width: 0%;
+  height: 0%;
+}
+
+.live-demo {
+    
+    width: 80%;
+	height: 180%;
+    border-style: solid;
+    border-color: #00000f;
+    background-color: #e5e5e5;
+	background-size: 18px 18px;
+	float: right;
+	
+}
+
+.element-pane {
+	width:19%;
+	height: 180%;
+	float: left;
+	
+	background-color: #ffffff;
+}
+
+.textareastyle {
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    border: .2px solid gray;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+    height: auto;
+    overflow: auto;
+    padding: 1px;
+    resize: both;
+    width: auto;
+}
+
+.remove-img {
+    width: 18px;
+	height: 18px;
+    background: url('../img/Remove-icon.png') no-repeat;
+	background-size: 18px 18px;
+}
+
+.element-button {
+    background-color: #00ecec; /* Green */
+    border: thin;
+    border-style: solid;
+    border-color: #004080;
+    color: #004080;   
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.element-textbox{ 
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #004080; 
+    outline:0; 
+    height:25px; 
+    width:30px;
+ } 
+ 
+.element-label{ 
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    height:25px; 
+    width: auto; 
+    font-family: Georgia;
+    font-size: 12px;
+    color: #004080;
+ } 
+	
+}

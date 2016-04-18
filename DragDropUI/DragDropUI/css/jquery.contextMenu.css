@@ -1,0 +1,170 @@
+/*!
+ * jQuery contextMenu - Plugin for simple contextMenu handling
+ *
+ * Version: 1.6.6
+ *
+ * Authors: Rodney Rehm, Addy Osmani (patches for FF)
+ * Web: http://medialize.github.com/jQuery-contextMenu/
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *   GPL v3 http://opensource.org/licenses/GPL-3.0
+ *
+ */
+
+.context-menu-list {
+    margin:0; 
+    padding:0;
+    
+    min-width: 120px;
+    max-width: 250px;
+    display: inline-block;
+    position: absolute;
+    list-style-type: none;
+    
+    border: 1px solid #DDD;
+    background: #EEE;
+    
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+       -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        -ms-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+         -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+.context-menu-item {
+    padding: 2px 2px 2px 24px;
+    background-color: #EEE;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: -moz-none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.context-menu-separator {
+    padding-bottom:0;
+    border-bottom: 1px solid #DDD;
+}
+
+.context-menu-item > label > input,
+.context-menu-item > label > textarea {
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
+}
+
+.context-menu-item.hover {
+    cursor: pointer;
+    background-color: #39F;
+}
+
+.context-menu-item.disabled {
+    color: #666;
+}
+
+.context-menu-input.hover,
+.context-menu-item.disabled.hover {
+    cursor: default;
+    background-color: #EEE;
+}
+
+.context-menu-submenu:after {
+    content: ">";
+    color: #666;
+    position: relative;
+    top: 0;
+    right: 3px;
+    z-index: 1;
+    width: 20px;
+    text-align: right;
+    float: right;
+}
+
+/* icons
+    #protip:
+    In case you want to use sprites for icons (which I would suggest you do) have a look at
+    http://css-tricks.com/13224-pseudo-spriting/ to get an idea of how to implement 
+    .context-menu-item.icon:before {}
+ */
+.context-menu-item.icon { min-height: 20px; background-repeat: no-repeat; background-position: 4px 2px; padding-right: 10px;}
+.context-menu-item.icon-edit { background-image: url(images/page_white_edit.png); }
+.context-menu-item.icon-cut { background-image: url(images/cut.png); }
+.context-menu-item.icon-copy { background-image: url(images/page_white_copy.png); }
+.context-menu-item.icon-paste { background-image: url(images/page_white_paste.png); }
+.context-menu-item.icon-delete { background-image: url(images/page_white_delete.png); }
+.context-menu-item.icon-add { background-image: url(images/page_white_add.png); }
+.context-menu-item.icon-quit { background-image: url(images/door.png); }
+.context-menu-item.icon-redcolor {background-image: url(../img/red.png);}
+.context-menu-item.icon-bluecolor {background-image: url(../img/lightblue.png);}
+.context-menu-item.icon-greencolor {background-image: url(../img/green.png);}
+.context-menu-item.icon-lightgreencolor {background-image: url(../img/lightgreen.png);}
+.context-menu-item.icon-coralcolor {background-image: url(../img/lightcoral.png);}
+.context-menu-item.icon-lightpinkcolor {background-image: url(../img/lightpink.png);}
+.context-menu-item.icon-silvercolor {background-image: url(../img/silver.png);}
+.context-menu-item.icon-greycolor {background-image: url(../img/grey.png);}
+.context-menu-item.icon-whitecolor {background-image: url(../img/white.png);}
+.context-menu-item.icon-cyancolor {background-image: url(../img/cyan.png);}
+.context-menu-item.icon-yellowcolor {background-image: url(../img/yellow.png);}
+.context-menu-item.icon-arialfont {border-bottom: 2px;background-image: url(../img/Arial.png);}
+.context-menu-item.icon-calibrifont {background-image: url(../img/Calibri.png);}
+.context-menu-item.icon-courierfont {background-image: url(../img/Courier.png);}
+.context-menu-item.icon-georgiafont {background-image: url(../img/Georgia.png);}
+.context-menu-item.icon-timesnewromanfont {background-image: url(../img/TimesNewRoman.png);}
+.context-menu-item.icon-trebuchetmsfont {background-image: url(../img/TrebuchetMS.png);}
+.context-menu-item.icon-verdanafont {background-image: url(../img/Verdana.png);}
+
+
+
+/* vertically align inside labels */
+.context-menu-input > label > * { vertical-align: top; }
+
+.context-menu-item.fonts {
+	
+	border-bottom: 2px;
+	
+}
+
+
+/* position checkboxes and radios as icons */
+.context-menu-input > label > input[type="checkbox"],
+.context-menu-input > label > input[type="radio"] {
+    margin-left: -17px;
+}
+.context-menu-input > label > span {
+    margin-left: 0px;
+    vertical-align: middle;;
+}
+
+.context-menu-input > label,
+.context-menu-input > label > input[type="text"],
+.context-menu-input > label > textarea,
+.context-menu-input > label > input[type="select"]
+
+
+.context-menu-input > label > textarea {
+    height: 100px;
+}
+.context-menu-item > .context-menu-list {
+    display: none;
+    /* re-positioned by js */
+    right: -5px;
+    top: 5px;
+}
+
+.context-menu-item.hover > .context-menu-list {
+    display: block;
+}
+
+.context-menu-input select {
+	margin-left: 10px;
+}
+
+
+.context-menu-accesskey {
+    text-decoration: underline;
+}
