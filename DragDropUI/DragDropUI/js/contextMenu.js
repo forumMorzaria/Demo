@@ -145,16 +145,50 @@ $(function(){
 			  * Add Column
 			  */
              function addColumn_click(key, opt){
+            	 
             	 var element = "#"+opt.$trigger.attr("id") + " tr";
             	 $(element).each(function()
 	    			 {
-	    			     $(this).append('<th></th>');
+	    			     $(this).append('<th class="classDataTableCell"></th>');
 	    			 });
             	 var tableid =element+" th";
             	 $(tableid).resizable({
  					handles: 'e',
             	 });
             	
+             }
+             /*
+			  * Remove Column
+			  */
+             function removeColumn_click(key, opt){
+            	 var element = "#"+opt.$trigger.attr("id") + " tr";
+            	 $(element).each(function()
+	    			 {
+            		 	$(this).find('th:last-child, td:last-child').remove();
+	    			 });
+            	
+             }
+             
+             /*
+	          * Update Left hand fields.
+	          */
+             function getFields_click(key, opt) {
+            	 var element = opt.$trigger.attr("connFieldId");
+            	 //element = element.substring(0, element.indexOf("-clone"));
+            	 getFieldsForContainer(element);
+                 
+             }
+             
+             /*
+	          * Delete selected field
+	          */
+             function delete_click(key, opt) {
+            	 var element = "#"+opt.$trigger.attr("id") ;
+            	 //element = '['+ element + ']';
+            	 var r = confirm("Do you want to delete this element");
+       	 	  	 if(r)
+       	 	  		 $(element).remove();
+                 
              }
 
             /**************************************************
@@ -183,7 +217,7 @@ $(function(){
                     },
                     fontsize: {name: "Font Size", type:'select', options: {1: '6', 2: '8', 3: '10', 4: '12', 5: '14', 6: '16', 7: '18', 8: '20'},selected: 2, events:{click: changefontsize_click}},
                     sep3: "---------",
-                    truncate: {name:"Truncate Text" ,callback : truncatetext_click },
+                    truncate: {name:"Grow Vertically" ,callback : truncatetext_click },
                     resize: {name:"Resize to fit" ,callback : resizefont_click },
                     sep4: "---------",
                     foldcolors: {
@@ -203,14 +237,7 @@ $(function(){
                         },
                     },
                     sep5: "---------",
-                    addColumn: {name:"Add Column" , callback:addColumn_click,disabled: function(key, opt) {
-                    	var element = "#"+opt.$trigger.attr("id");
-                    	if($(element).is("table"))
-                    		return false;
-                    	
-                    	return true;
-                    	} 
-                    },
+                    deleteElement: {name:"Delete Element" , callback:delete_click}
                 }, 
                 events: {
                     show: function(opt) {
@@ -225,5 +252,53 @@ $(function(){
                         $.contextMenu.getInputValues(opt, $this.data());
                     }
                 }
-            });
+            });// context-menu-input1
+            
+            
+            
+            // Add Menu for table elements
+            $.contextMenu({
+                selector: '.context-menu-table1', 
+                items: {
+                	
+                    foldcolors: {
+                        name: "Background colors   ",
+                        items: {
+                        	white: {name: "White", icon:"whitecolor", value:"White", callback:changebg_click},
+                        	silver: {name: "Silver", icon:"silvercolor", value:"Silver", callback:changebg_click},
+                            grey: {name: "Grey", icon:"greycolor", value:"Grey", callback:changebg_click},
+                        	cyan: {name: "Cyan", icon:"cyancolor", value:"Cyan", callback:changebg_click},
+                        	lightblue: {name: "Blue", icon:"bluecolor", value:"Blue", callback:changebg_click},
+                        	lightpink: {name: "Pink", icon:"lightpinkcolor", value:"Pink", callback:changebg_click},
+                            lightcoral: {name: "Coral", icon:"coralcolor", value:"Coral", callback:changebg_click},
+                        	red: {name: "Red",icon:"redcolor", value:"Red", callback:changebg_click},                            
+                            yellow: {name: "Yellow", icon:"yellowcolor", value:"Yellow", callback:changebg_click},
+                            lightgreen: {name: "LightGreen", icon:"lightgreencolor", value:"LightGreen", callback:changebg_click},
+                            green: {name: "Green", icon:"greencolor", value:"Green", callback:changebg_click}
+                        },
+                    },
+                    sep2: "---------",
+                    addColumn: {name:"Add Column" , callback:addColumn_click} ,
+                    removeColumn: {name:"Remove Column" , callback:removeColumn_click},
+                    sep3: "---------",
+                    deleteElement: {name:"Delete Element" , callback:delete_click}
+                }, 
+                events: {
+                    show: function(opt) {
+                    	
+                        var $this = this;
+                        // import states from data store
+                        $.contextMenu.setInputValues(opt, $this.data());
+                    }, 
+                    hide: function(opt) {
+                        var $this = this;
+                        // export states to data store
+                        $.contextMenu.getInputValues(opt, $this.data());
+                    }
+                }
+            });// context-menu-input1
+            
+            
+            
+            
         });
