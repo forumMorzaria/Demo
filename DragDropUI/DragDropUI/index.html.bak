@@ -307,7 +307,7 @@ function droppableDiv(event,ui,container){
 
 <div id="toolbar">
 	<div>
-		<!--<button class="element-button" onclick="javascript:demoFromHTML()">Export to PDF</button>-->
+		<button class="element-button" onclick="javascript:demoFromHTML()">Export to PDF</button>
 	</div>
 	<h3> You can Drag-Drop-Resize Labels, editable fields, tables from the left hand pane onto the canvas. Right click to see a customised menu to edit the fields.</h3>
 </div>
