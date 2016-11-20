@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Login </title>
+        <script src="js/jquery-1.12.2.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+	
+        <link href="css/auth.css" rel="stylesheet" type="text/css" />
+        
+    <script>
+    function getParameterByName(name) {
+        var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+        return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+    }
+    window.onload=function(){
+    	var isError = getParameterByName('error');    	
+    	if(isError){
+    		$("#error").text("Invalid Username/Password");
+    	}    
+    }
+    
+    
+    
+    
+    
+    </script>
+    </head>
+    <body>
+        
+        <form action="login" id="login-form" method="POST">
+	       <div class="login">
+	    
+	       	   <div id="error" class="error"></div>
+	           <input type="text" placeholder="username" id="username" name="username"/> 
+	           <input type="password" placeholder="Password" id="password" name="password"/>
+	            
+	           <div><input type="Submit" value="Sign In" /></div>
+	       </div>
+	     </form>
+    </body>  
+</html>
