@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Connect Four</title>
+	<script src="js/jquery-1.12.2.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+	<script src="js/connectfour.js" type="text/javascript"></script>
+</head>
+<body>
+WELCOME
+<br>
+<div id="error" style="color:red"></div>
+<br>
+<div>
+	<input type ="button" value="Start New Game" onclick="javascript:startNewGame();" />
+</div>
+<br>
+<div>
+	<select id="availablegames"></select>
+	<input type ="button" value="Join a game" onclick="javascript:joinGame();" />
+</div>
+<div id="success" style="color:blue"></div>
+
+<div style="display:inline"><span>CURRENT PLAYER </span><div id="player"></div>
+</div>
+<br>
+<div id="currentgame">
+</div>
+<br>
+<div id="game">
+	
+	<span>Choose a column to drop your coin</span>
+	<select id="column" >
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+</div>
+<br>
+<div>
+	<input type ="button" id="refresh" value="Refresh" onclick="javascript:refresh();" />
+	<input type ="button" id="play" value="Play" onclick="javascript:play();" />
+</div>
+<table id="gameboard">
+</table>
+
+</body>
+</html>
